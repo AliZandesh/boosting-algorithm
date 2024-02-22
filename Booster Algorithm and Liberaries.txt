@@ -1,0 +1,47 @@
+Here are some of the popular booster libraries and algorithms in machine learning:
+
+1- AdaBoost: 
+A boosting algorithm that combines several weak learners into a strong learner by weighting the training data points and hypotheses.
+
+2- Gradient tree boosting: 
+A boosting algorithm that builds an additive model by sequentially adding decision trees to the model.
+
+3- eXtreme Gradient Boosting (XGBoost): 
+A popular gradient boosting algorithm that uses weak regression trees as weak learners. 
+It also does cross-validation and computes the feature importance. Furthermore, it accepts sparse input data.
+
+4- LightGBM: 
+A gradient boosting framework that uses a novel technique called Gradient-based One-Side Sampling (GOSS) to reduce the training time and memory usage.
+
+5- CatBoost: 
+A gradient boosting algorithm that is designed to handle categorical features natively. It also has built-in routines to handle missing data.
+
+6- Bootstrapped Aggregation (Bagging): 
+An ensemble method that creates multiple models by resampling the training data with replacement and then averaging the predictions.
+
+7- Weighted Average (Blending): 
+An ensemble method that combines the predictions of multiple models by taking a weighted average of their predictions.
+
+8- Stacked Generalization (Stacking): 
+An ensemble method that combines the predictions of multiple models by training a meta-model on the predictions of the base models.
+
+9- Gradient Boosting Machines (GBM): 
+A gradient boosting algorithm that builds an additive model by sequentially adding decision trees to the model.
+
+10- Random Forest: 
+An ensemble method that creates multiple decision trees by resampling the training data with replacement and then averaging the predictions.
+
+11- LPBoost: 
+A boosting algorithm that uses linear programming to optimize the weights of the training data points.
+
+12- TotalBoost: 
+A boosting algorithm that uses total variation regularization to optimize the weights of the training data points.
+
+13- BrownBoost: 
+A boosting algorithm that uses Brown clustering to group similar features together.
+
+14- MadaBoost: 
+A boosting algorithm that uses a margin-based approach to optimize the weights of the training data points.
+
+15- LogitBoost: 
+A boosting algorithm that uses logistic regression to optimize the weights of the training data points.

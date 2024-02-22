@@ -1,0 +1,244 @@
+https://www.geeksforgeeks.org/xgboost/
+https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
+https://medium.com/@24littledino/xgboost-classification-in-python-f29cc2c50a9b
+
+Boosting:
+Boosting is an ensemble modelling, technique that attempts to build a strong classifier from the number of weak classifiers. 
+It is done by building a model by using weak models in series. 
+Firstly, a model is built from the training data. 
+Then the second model is built which tries to correct the errors present in the first model.
+This procedure is continued and models are added until either the complete training data set is predicted correctly or the maximum number of models are added.
+
+*******************************************************
+Gradient Boosting: 
+Gradient Boosting is a popular boosting algorithm. 
+In gradient boosting, each predictor corrects its predecessor’s error.
+
+*******************************************************
+
+You might notice that I copy and paste content from gradient boosting, and yes, I did.
+In fact, gradient boosting and XGBoost has a lot in common, only that XGBoost is more flexible and more efficient.
+
+*******************************************************
+
+TYPES OF ENSEMBLE METHODS
+
+1- Bagging — In bootstrap aggregating(BAGGing), numerous models are Use Up parallel using randomly training data subsets. 
+These models are then combine based on majority votes of their decisions.
+
+2- Boosting — Similar to bagging but instead of parallel, the models are use up in series. 
+For each successive model, the weights are adjust by depending on the performance of previous models. 
+
+*******************************************************
+
+EXtreme Gradient Boosting
+
+If things don’t go your way in predictive modeling, use XGboost. 
+
+XGBoost algorithm has become the ultimate weapon of many data scientists. 
+
+It’s a highly sophisticated algorithm, powerful enough to deal with all sorts of irregularities of data. 
+
+It uses parallel computation in which multiple decision trees are trained in parallel to find the final prediction. 
+
+XGBoost is a high-performance decision-tree-based ensemble learning method usually used for supervised learning. 
+
+In Ensemble Learning, results from different individual models are combine in order to make an optimize prediction. 
+
+Instead of depending on a single model’s outcome, the Ensemble learning method makes a decision by aggregating results from different models to put forth a model with better accuracy.
+
+XGBoost, which stands for Extreme Gradient Boosting
+
+It is a machine learning library that is used for regression and classification tasks.
+
+It is an optimized distributed gradient boosting library designed for efficient and scalable training of machine learning models
+
+XGBoost is an ensemble learning method that combines the predictions of multiple weak models to produce a stronger prediction. 
+
+It is particularly popular because it is fast and can handle large datasets easily.
+
+XGBoost is an implementation of gradient-boosted decision trees. 
+
+It is designed to help you build better models and is highly efficient and scalable. 
+
+It does not require optimization of the parameters or tuning, which means that it can be used immediately after installation without any further configuration
+
+XGBoost is a powerful open-source tool for machine learning that can help you understand your data and make better decisions.
+
+The XGBoost algorithm works by iteratively adding weak learners to the model, with each new learner attempting to correct the errors made by the previous learners. 
+
+The weights of the weak learners are adjusted during training to minimize the loss function. 
+
+The final model is an additive model that combines the predictions of all the weak learners.
+
+XGBoost can be used in a variety of applications, including Kaggle competitions, recommendation systems, and click-through rate prediction, among others. 
+
+It is also highly customizable and allows for fine-tuning of various model parameters to optimize performance. 
+
+XGBoost is designed for speed, ease of use, and performance on large datasets.
+
+XGBoost is a popular and efficient open-source implementation of the gradient boosted trees algorithm. 
+
+It is a supervised learning algorithm that is used for regression and classification tasks. 
+
+Gradient boosting is a powerful technique that can handle complex data relationships and produce accurate predictions. 
+
+XGBoost is widely used in machine learning and data science. 
+
+it has become one of the most popular and widely used machine learning algorithms due to its ability to handle large datasets 
+
+its ability to achieve state-of-the-art performance in many machine learning tasks such as classification and regression
+
+XGBoost is an optimized enhancement of Gradient Boosting. 
+
+In boosting, weights are added to the model based on the residuals. 
+
+XGBoost introduces new features to gradient boosting like regularization, tree pruning, and parallel processing. 
+
+*****************************************************************************
+
+Gradient Boosting:
+it is a popular boosting algorithm. 
+In gradient boosting, each predictor corrects its predecessor’s error.
+In gradient boosted the loss function is optimized to correct errors made by previous models. 
+
+*****************************************************************************
+
+Before understanding the XGBoost, we first need to understand the trees especially the decision tree
+
+In this algorithm, decision trees are created in sequential form. 
+Weights play an important role in XGBoost. 
+Weights are assigned to all the independent variables which are then fed into the decision tree which predicts results. 
+The weight of variables predicted wrong by the tree is increased and these variables are then fed to the second decision tree.
+These individual classifiers/predictors then ensemble to give a strong and more precise model. 
+It can work on regression, classification, ranking, and user-defined prediction problems.
+
+*****************************************************************************
+
+First of all, XGBoost can be used in regression, binary classification, and multi-class classification (One-vs-all). 
+Second, XGBoost and gradient boosting have a lot in common, including the log-odds and logistic functions.
+
+
+let’s dive into XGBoost! 
+Suppose we want to predict whether a person is obese (binary classification) using his/her Gender and Cholesterol level. 
+In specific, we have 10 people in the training set — 3 of them are obese, the remaining 7 people are not obese.
+
+
+1. Assigns same initial predictions (0.5) to samples:
+
+As a start, we assign initial predictions to each sample. 
+Since we haven’t trained any model or learned anything from the data, we can simply set 0.5 as initial prediction for every sample.
+Namely, a person has 50% chance being obese.
+
+0.5 is the default value in XGBoost module. 
+We can change it to whatever value we like as long as it’s in the range [0, 1].
+
+2. Calculate Pseudo-residual for each sample:
+pseudo-residual = Actual value — Predicted value
+
+Example: 
+3 people are obese (represented by 1), so their pseudo-residuals are (1–0.5) : 0.5. 
+The remaining 7 people are not obese (represented by 0), so their pseudo-residuals are (0–0.5): -0.5.
+
+The predicted values of all the samples are the same since it’s our FIRST tree. 
+After the first iteration, the predicted values are likely to be different.
+
+3. Build a decision tree based on Pseudo-residuals
+
+traditional decision trees, where the quality of a split is measured by the reduction in impurity,
+Unlike normal decision tree, the quality is NOT measured by mean squared error on pseudo-residuals
+XGBoost uses a unique quality measure that takes into account the second-order derivative of the loss function. 
+This measure is called the "approximate Hessian" and is used to select the best split for each node in the decision tree.
+
+
+
+
+
+*************************************************************
+https://pianalytix.com/xgboost-machine-learning/
+
+For example, if we have a dataset with 10 samples and a binary target variable 
+we can calculate the similarity score and gain for each subset of data as follows:
+
+Suppose we have a dataset with 10 samples and a binary target variable (0 or 1). 
+We want to split the data based on a numerical feature called "age". 
+Here's the distribution of the target variable for each value of the feature:
+
+
+1- Similarity Score = (Sum of residuals)^2 / Number of residuals + lambda
+
+2- Gain = Left tree (similarity score) + Right (similarity score) - Root (similarity score)
+
+3- to choose the bigger Similarity Score
+
+4- Output Value(ov) = (Sum of residuals) / Number of residuals + lambda 
+
+5- New Prediction = Previous Prediction + ( Learning_rate * output)
+
+Prune the tree by calculating the difference between Gain and gamma (user-defined tree-complexity parameter) 
+
+Gain - gamma
+If the result(ov) is a positive number then do not prune 
+If the result(ov) is negative, then prune and again subtract gamma from the next Gain value way up the tree.
+
+
+************************************************************
+
+As it’s an Ensemble technique, we are grouping very shallow decision trees and using them to produce predictions. 
+We build High bias and low-variance trees and combine them additively to reduce bias without altering the variance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
